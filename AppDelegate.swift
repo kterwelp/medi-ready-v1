@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  Medi Ready
+//  Medi Ready v2
 //
-//  Created by Kevin Terwelp on 12/11/18.
-//  Copyright © 2018 Kevin Terwelp. All rights reserved.
+//  Created by Kevin Terwelp on 2/19/19.
+//  Copyright © 2019 Kevin Terwelp. All rights reserved.
 //
 
 import UIKit

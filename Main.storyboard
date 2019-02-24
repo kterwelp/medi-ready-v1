@@ -1,32 +1,519 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lbb-ci-9or">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Intro View Controller-->
+        <!--Medication List-->
+        <scene sceneID="jgP-GM-dEX">
+            <objects>
+                <tableViewController id="sMC-MI-Oip" customClass="MedTableViewController" customModule="Medi_Ready_v2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="115" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" springLoaded="YES" id="Fsg-a5-JDq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <color key="sectionIndexBackgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedTableViewCell" rowHeight="115" id="uRO-d4-vkc" customClass="MedTableViewCell" customModule="Medi_Ready_v2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="115"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uRO-d4-vkc" id="KNg-jG-ncc">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="114.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="246-ud-7MK">
+                                            <rect key="frame" x="16" y="11" width="343" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Medication">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="18" name="Georgia"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUa-Py-S71">
+                                            <rect key="frame" x="16" y="34" width="343" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Dose">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="18" name="Georgia"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFD-te-LoN">
+                                            <rect key="frame" x="16" y="58" width="343" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Num Days">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="18" name="Georgia"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ie-af-593">
+                                            <rect key="frame" x="16" y="84" width="343" height="22"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Rx #:">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="18" name="Georgia"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="row1Label" destination="246-ud-7MK" id="OiZ-NO-pua"/>
+                                    <outlet property="row2Label" destination="LUa-Py-S71" id="9B2-1R-hUJ"/>
+                                    <outlet property="row3Label" destination="QFD-te-LoN" id="ESl-u6-eHG"/>
+                                    <outlet property="row4Label" destination="1ie-af-593" id="5S5-Om-gxv"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="hfn-jP-kjg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sMC-MI-Oip" id="sw4-IY-r1A"/>
+                            <outlet property="delegate" destination="sMC-MI-Oip" id="oFR-Fi-cR9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Medication List" id="tOP-fw-v7q">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GwO-Bh-wh8">
+                            <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="sl8-WS-uJI" kind="presentation" identifier="AddItem" id="yCW-Gu-JoB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J1K-Xh-bd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="133.5832083958021"/>
+        </scene>
+        <!--New Medication-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="BYZ-38-t0r" customClass="IntroViewController" customModule="Medi_Ready" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MedViewController" customModule="Medi_Ready_v2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wSu-Wv-JAP" userLabel="Outer Stack View">
+                                <rect key="frame" x="0.0" y="84" width="375" height="1100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WTL-vX-Bqs">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="J9z-Eq-7rB">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1100"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8j-KZ-Cka">
+                                                        <rect key="frame" x="20" y="20" width="197" height="28.5"/>
+                                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Medication Name:">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="24" name="Georgia"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter medication name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eQS-CC-0q1">
+                                                        <rect key="frame" x="20" y="56.5" width="374.5" height="30"/>
+                                                        <attributedString key="attributedText"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9m-4a-iYJ">
+                                                        <rect key="frame" x="20" y="163" width="172.5" height="28.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Tablet Strength:">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="24" name="Georgia"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter tablet strength or dosage per tablet" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cI1-Q5-gPd">
+                                                        <rect key="frame" x="20" y="199.5" width="374.5" height="30"/>
+                                                        <attributedString key="attributedText"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U7k-Jl-eLM">
+                                                        <rect key="frame" x="20" y="94.5" width="130.5" height="28.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Rx Number:">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="24" name="Georgia"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter Rx number" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eVw-Aa-rFj">
+                                                        <rect key="frame" x="20" y="125" width="374.5" height="30"/>
+                                                        <attributedString key="attributedText"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fi-L5-CaM">
+                                                        <rect key="frame" x="20" y="237.5" width="197" height="28.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Prescription Dose:">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="24" name="Georgia"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter prescription dose" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="46p-pH-aww">
+                                                        <rect key="frame" x="20" y="268" width="374.5" height="30"/>
+                                                        <attributedString key="attributedText"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufB-10-pYC">
+                                                        <rect key="frame" x="20" y="306" width="186" height="28.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Tablets Per Dose:">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="24" name="Georgia"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter number of tablets per dose" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iFC-gE-jFI">
+                                                        <rect key="frame" x="20" y="342.5" width="374.5" height="30"/>
+                                                        <attributedString key="attributedText"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tz-Gy-Fr6">
+                                                        <rect key="frame" x="20" y="449" width="119.5" height="28.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Frequency:">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="24" name="Georgia"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter dosage frequency" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="F1r-kd-H7e">
+                                                        <rect key="frame" x="20" y="485.5" width="374.5" height="30"/>
+                                                        <attributedString key="attributedText"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTx-DI-WqS">
+                                                        <rect key="frame" x="20" y="380.5" width="71" height="28.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Route:">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="24" name="Georgia"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter route" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZFN-fT-JuV">
+                                                        <rect key="frame" x="20" y="411" width="374.5" height="30"/>
+                                                        <attributedString key="attributedText"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKm-Mh-vVY">
+                                                        <rect key="frame" x="20" y="523.5" width="337.5" height="28.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Number of Days (for stop date):">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="24" name="Georgia"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter number of days if stop date ordered" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lGI-O3-VxB">
+                                                        <rect key="frame" x="20" y="554" width="374.5" height="30"/>
+                                                        <attributedString key="attributedText"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJH-Oj-5iN">
+                                                        <rect key="frame" x="18" y="592" width="244.5" height="28.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Indication / Diagnosis:">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="24" name="Georgia"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Enter indication or diagnosis" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aYi-TI-Zj9">
+                                                        <rect key="frame" x="20" y="631.5" width="374.5" height="30"/>
+                                                        <attributedString key="attributedText"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1t-Zt-Bu3">
+                                                        <rect key="frame" x="20" y="669.5" width="130.5" height="28.5"/>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Comments:">
+                                                                <attributes>
+                                                                    <color key="NSColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <font key="NSFont" size="24" name="Georgia"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <color key="highlightedColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CdL-FP-5pG">
+                                                        <rect key="frame" x="20" y="703" width="374.5" height="128"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="128" id="Ese-rs-Lll"/>
+                                                        </constraints>
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Enter comments here">
+                                                                <attributes>
+                                                                    <font key="NSFont" size="18" name="Georgia"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" lookupSuggestion="YES"/>
+                                                    </textView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="eQS-CC-0q1" firstAttribute="top" secondItem="q8j-KZ-Cka" secondAttribute="bottom" constant="8" symbolic="YES" id="0rf-Ok-880"/>
+                                                    <constraint firstItem="bTx-DI-WqS" firstAttribute="top" secondItem="iFC-gE-jFI" secondAttribute="bottom" constant="8" symbolic="YES" id="0vA-lM-P23"/>
+                                                    <constraint firstItem="U7k-Jl-eLM" firstAttribute="top" secondItem="eQS-CC-0q1" secondAttribute="bottom" constant="8" symbolic="YES" id="1Lw-Px-hvw"/>
+                                                    <constraint firstItem="46p-pH-aww" firstAttribute="trailing" secondItem="iFC-gE-jFI" secondAttribute="trailing" id="1to-5a-ew7"/>
+                                                    <constraint firstItem="F1r-kd-H7e" firstAttribute="top" secondItem="4tz-Gy-Fr6" secondAttribute="bottom" constant="8" symbolic="YES" id="1x7-76-8dg"/>
+                                                    <constraint firstItem="eQS-CC-0q1" firstAttribute="leading" secondItem="U7k-Jl-eLM" secondAttribute="leading" id="8Pd-YG-ysb"/>
+                                                    <constraint firstItem="eVw-Aa-rFj" firstAttribute="trailing" secondItem="cI1-Q5-gPd" secondAttribute="trailing" id="C4E-6x-vhl"/>
+                                                    <constraint firstItem="iFC-gE-jFI" firstAttribute="trailing" secondItem="ZFN-fT-JuV" secondAttribute="trailing" id="CbJ-fI-BsV"/>
+                                                    <constraint firstItem="Q9m-4a-iYJ" firstAttribute="top" secondItem="eVw-Aa-rFj" secondAttribute="bottom" constant="8" symbolic="YES" id="Dph-CP-bWu"/>
+                                                    <constraint firstItem="ufB-10-pYC" firstAttribute="leading" secondItem="iFC-gE-jFI" secondAttribute="leading" id="Egw-H5-9X2"/>
+                                                    <constraint firstItem="pJH-Oj-5iN" firstAttribute="leading" secondItem="J9z-Eq-7rB" secondAttribute="leading" constant="18" id="Feu-Is-nud"/>
+                                                    <constraint firstItem="ZFN-fT-JuV" firstAttribute="top" secondItem="bTx-DI-WqS" secondAttribute="bottom" constant="2" id="G91-hZ-2ai"/>
+                                                    <constraint firstItem="ZFN-fT-JuV" firstAttribute="trailing" secondItem="F1r-kd-H7e" secondAttribute="trailing" id="HxD-rS-cgp"/>
+                                                    <constraint firstItem="q8j-KZ-Cka" firstAttribute="leading" secondItem="J9z-Eq-7rB" secondAttribute="leading" constant="20" id="IDc-vL-h73"/>
+                                                    <constraint firstItem="iFC-gE-jFI" firstAttribute="top" secondItem="ufB-10-pYC" secondAttribute="bottom" constant="8" symbolic="YES" id="KDI-Ln-kA1"/>
+                                                    <constraint firstItem="5fi-L5-CaM" firstAttribute="leading" secondItem="46p-pH-aww" secondAttribute="leading" id="KKy-H2-sbL"/>
+                                                    <constraint firstItem="q8j-KZ-Cka" firstAttribute="leading" secondItem="eQS-CC-0q1" secondAttribute="leading" id="Mre-UW-g9d"/>
+                                                    <constraint firstItem="lGI-O3-VxB" firstAttribute="leading" secondItem="aYi-TI-Zj9" secondAttribute="leading" id="Mvq-zz-2dT"/>
+                                                    <constraint firstItem="cI1-Q5-gPd" firstAttribute="leading" secondItem="5fi-L5-CaM" secondAttribute="leading" id="Myh-SJ-ImY"/>
+                                                    <constraint firstItem="Q9m-4a-iYJ" firstAttribute="leading" secondItem="cI1-Q5-gPd" secondAttribute="leading" id="NOm-9P-Oe1"/>
+                                                    <constraint firstItem="CdL-FP-5pG" firstAttribute="top" secondItem="m1t-Zt-Bu3" secondAttribute="bottom" constant="5" id="PCt-Ak-TrR"/>
+                                                    <constraint firstItem="46p-pH-aww" firstAttribute="leading" secondItem="ufB-10-pYC" secondAttribute="leading" id="TnT-rw-aPq"/>
+                                                    <constraint firstAttribute="bottom" secondItem="CdL-FP-5pG" secondAttribute="bottom" constant="264" id="VG6-9i-IN1"/>
+                                                    <constraint firstItem="ufB-10-pYC" firstAttribute="top" secondItem="46p-pH-aww" secondAttribute="bottom" constant="8" symbolic="YES" id="VNZ-qe-HaM"/>
+                                                    <constraint firstItem="bTx-DI-WqS" firstAttribute="leading" secondItem="ZFN-fT-JuV" secondAttribute="leading" id="Vbz-aF-2mR"/>
+                                                    <constraint firstItem="eVw-Aa-rFj" firstAttribute="leading" secondItem="Q9m-4a-iYJ" secondAttribute="leading" id="XFA-J4-2wZ"/>
+                                                    <constraint firstItem="F1r-kd-H7e" firstAttribute="trailing" secondItem="lGI-O3-VxB" secondAttribute="trailing" id="Yx5-qh-x3E"/>
+                                                    <constraint firstItem="U7k-Jl-eLM" firstAttribute="trailing" secondItem="m1t-Zt-Bu3" secondAttribute="trailing" id="ZO1-wx-NfR"/>
+                                                    <constraint firstItem="46p-pH-aww" firstAttribute="top" secondItem="5fi-L5-CaM" secondAttribute="bottom" constant="2" id="aMH-Jp-7by"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eQS-CC-0q1" secondAttribute="trailing" constant="-20" id="ax4-mS-x1h"/>
+                                                    <constraint firstItem="m1t-Zt-Bu3" firstAttribute="leading" secondItem="CdL-FP-5pG" secondAttribute="leading" id="bQJ-E5-jHf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="SKm-Mh-vVY" secondAttribute="trailing" constant="17" id="bdx-Ur-5Md"/>
+                                                    <constraint firstItem="aYi-TI-Zj9" firstAttribute="trailing" secondItem="CdL-FP-5pG" secondAttribute="trailing" id="bvS-Ez-k3v"/>
+                                                    <constraint firstItem="m1t-Zt-Bu3" firstAttribute="top" secondItem="aYi-TI-Zj9" secondAttribute="bottom" constant="8" symbolic="YES" id="cH7-Yd-ecN"/>
+                                                    <constraint firstItem="lGI-O3-VxB" firstAttribute="trailing" secondItem="aYi-TI-Zj9" secondAttribute="trailing" id="ee9-N3-sPi"/>
+                                                    <constraint firstItem="iFC-gE-jFI" firstAttribute="leading" secondItem="bTx-DI-WqS" secondAttribute="leading" id="esN-bx-AuV"/>
+                                                    <constraint firstItem="aYi-TI-Zj9" firstAttribute="top" secondItem="pJH-Oj-5iN" secondAttribute="bottom" constant="11" id="gOk-xB-rxS"/>
+                                                    <constraint firstItem="4tz-Gy-Fr6" firstAttribute="leading" secondItem="F1r-kd-H7e" secondAttribute="leading" id="gRn-7e-qaV"/>
+                                                    <constraint firstItem="U7k-Jl-eLM" firstAttribute="leading" secondItem="eVw-Aa-rFj" secondAttribute="leading" id="gSu-IU-oVs"/>
+                                                    <constraint firstItem="eVw-Aa-rFj" firstAttribute="top" secondItem="U7k-Jl-eLM" secondAttribute="bottom" constant="2" id="gwe-pR-IhR"/>
+                                                    <constraint firstItem="F1r-kd-H7e" firstAttribute="leading" secondItem="SKm-Mh-vVY" secondAttribute="leading" id="gz1-Vw-1sx"/>
+                                                    <constraint firstItem="SKm-Mh-vVY" firstAttribute="leading" secondItem="lGI-O3-VxB" secondAttribute="leading" id="i6b-EF-4Ao"/>
+                                                    <constraint firstItem="cI1-Q5-gPd" firstAttribute="top" secondItem="Q9m-4a-iYJ" secondAttribute="bottom" constant="8" symbolic="YES" id="jId-Kw-xHX"/>
+                                                    <constraint firstItem="aYi-TI-Zj9" firstAttribute="leading" secondItem="m1t-Zt-Bu3" secondAttribute="leading" id="kn5-uc-OOR"/>
+                                                    <constraint firstItem="q8j-KZ-Cka" firstAttribute="top" secondItem="J9z-Eq-7rB" secondAttribute="top" constant="20" id="l45-MJ-6qQ"/>
+                                                    <constraint firstItem="lGI-O3-VxB" firstAttribute="top" secondItem="SKm-Mh-vVY" secondAttribute="bottom" constant="2" id="mjJ-bX-IWX"/>
+                                                    <constraint firstItem="cI1-Q5-gPd" firstAttribute="trailing" secondItem="46p-pH-aww" secondAttribute="trailing" id="p0R-c2-B4h"/>
+                                                    <constraint firstItem="ZFN-fT-JuV" firstAttribute="leading" secondItem="4tz-Gy-Fr6" secondAttribute="leading" id="pXb-hY-VHI"/>
+                                                    <constraint firstItem="SKm-Mh-vVY" firstAttribute="top" secondItem="F1r-kd-H7e" secondAttribute="bottom" constant="8" symbolic="YES" id="qpu-Y6-Lk9"/>
+                                                    <constraint firstItem="eQS-CC-0q1" firstAttribute="trailing" secondItem="eVw-Aa-rFj" secondAttribute="trailing" id="rfX-ud-FOj"/>
+                                                    <constraint firstItem="pJH-Oj-5iN" firstAttribute="top" secondItem="lGI-O3-VxB" secondAttribute="bottom" constant="8" symbolic="YES" id="s7Y-w0-1D7"/>
+                                                    <constraint firstItem="4tz-Gy-Fr6" firstAttribute="top" secondItem="ZFN-fT-JuV" secondAttribute="bottom" constant="8" symbolic="YES" id="tLE-HK-5a7"/>
+                                                    <constraint firstItem="5fi-L5-CaM" firstAttribute="top" secondItem="cI1-Q5-gPd" secondAttribute="bottom" constant="8" symbolic="YES" id="v9Z-jL-2Ua"/>
+                                                </constraints>
+                                            </scrollView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="J9z-Eq-7rB" secondAttribute="trailing" id="ZHA-SQ-rFN"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wSu-Wv-JAP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BPe-oi-pSL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wSu-Wv-JAP" secondAttribute="bottom" constant="16" id="X5z-JI-Vzx"/>
+                            <constraint firstItem="wSu-Wv-JAP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="lZf-CS-dmc"/>
+                            <constraint firstAttribute="trailing" secondItem="wSu-Wv-JAP" secondAttribute="trailing" id="plh-vP-hMS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Medication" largeTitleDisplayMode="always" id="rjm-lH-knw">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="HuA-Ft-IHH">
+                            <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="cRp-EW-6rs"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="KWU-uE-MxJ">
+                            <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="fI6-If-SbI" kind="unwind" unwindAction="unwindToMedListWithSender:" id="U2G-Ek-Uhd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="1200"/>
+                    <connections>
+                        <outlet property="commentTextView" destination="CdL-FP-5pG" id="uM4-Fm-qho"/>
+                        <outlet property="commentsLabel" destination="m1t-Zt-Bu3" id="Kcf-aQ-1id"/>
+                        <outlet property="doseLabel" destination="5fi-L5-CaM" id="RI7-4W-q0K"/>
+                        <outlet property="doseTextField" destination="46p-pH-aww" id="2Ho-n9-yp7"/>
+                        <outlet property="dxLabel" destination="pJH-Oj-5iN" id="OuC-DN-MB4"/>
+                        <outlet property="dxTextField" destination="aYi-TI-Zj9" id="fQf-jE-Eqj"/>
+                        <outlet property="frequencyLabel" destination="4tz-Gy-Fr6" id="rjq-O4-3KA"/>
+                        <outlet property="frequencyTextField" destination="F1r-kd-H7e" id="ua4-Ak-k6b"/>
+                        <outlet property="medNameLabel" destination="q8j-KZ-Cka" id="86C-EX-NEo"/>
+                        <outlet property="medTextField" destination="eQS-CC-0q1" id="7kU-Pb-eqb"/>
+                        <outlet property="numOfDaysLabel" destination="SKm-Mh-vVY" id="cgj-bS-ryt"/>
+                        <outlet property="numOfDaysTextField" destination="lGI-O3-VxB" id="gxl-42-3j7"/>
+                        <outlet property="outerStackView" destination="wSu-Wv-JAP" id="CW9-dy-XDY"/>
+                        <outlet property="routeLabel" destination="bTx-DI-WqS" id="lnR-jk-Mor"/>
+                        <outlet property="routeTextField" destination="ZFN-fT-JuV" id="SWd-Bv-NUJ"/>
+                        <outlet property="rxNumLabel" destination="U7k-Jl-eLM" id="84g-di-ewc"/>
+                        <outlet property="rxNumTextField" destination="eVw-Aa-rFj" id="M1T-Za-oe0"/>
+                        <outlet property="saveButton" destination="KWU-uE-MxJ" id="6Es-2t-wea"/>
+                        <outlet property="scrollView" destination="J9z-Eq-7rB" id="fOh-bl-gpr"/>
+                        <outlet property="stackView" destination="WTL-vX-Bqs" id="qWc-RW-UfP"/>
+                        <outlet property="tabDoseLabel" destination="Q9m-4a-iYJ" id="VGT-eL-d0m"/>
+                        <outlet property="tabDoseTextField" destination="cI1-Q5-gPd" id="bQB-CK-S73"/>
+                        <outlet property="tabPerDoseLabel" destination="ufB-10-pYC" id="v2Q-Aq-oFH"/>
+                        <outlet property="tabPerDoseTextField" destination="iFC-gE-jFI" id="fRe-1k-mTy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="fI6-If-SbI" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2015.2" y="133.13343328335833"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="VGf-RN-v3V">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aDE-vR-MZN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ltu-WH-pdP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sMC-MI-Oip" kind="relationship" relationship="rootViewController" id="od4-KR-anC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gw4-P2-F9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-823.20000000000005" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E8r-3T-9hn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sl8-WS-uJI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zan-4P-7hn">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="48R-3J-NVd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WvG-NU-ZpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1062" y="498"/>
+        </scene>
+        <!--Intro View Controller-->
+        <scene sceneID="48o-ye-u4R">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="lbb-ci-9or" customClass="IntroViewController" customModule="Medi_Ready_v2" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xkZ-5y-tPr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ie3-I2-gKL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UAl-x0-cmP">
                                 <rect key="frame" x="16" y="295" width="343" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Medi Ready">
                                         <attributes>
                                             <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="48" name="Chalkduster"/>
+                                            <font key="NSFont" size="60" name="GurmukhiMN"/>
                                             <font key="NSOriginalFont" size="36" name="Chalkboard"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -37,347 +524,24 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="UAl-x0-cmP" firstAttribute="leading" secondItem="xkZ-5y-tPr" secondAttribute="leadingMargin" id="OAg-79-hTT"/>
+                            <constraint firstItem="UAl-x0-cmP" firstAttribute="top" secondItem="2fn-M6-2de" secondAttribute="top" constant="275" id="QjN-8F-Eex"/>
+                            <constraint firstItem="UAl-x0-cmP" firstAttribute="centerY" secondItem="xkZ-5y-tPr" secondAttribute="centerY" id="Snd-oj-mYe"/>
+                            <constraint firstItem="UAl-x0-cmP" firstAttribute="trailing" secondItem="xkZ-5y-tPr" secondAttribute="trailingMargin" id="zXv-wk-t0v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2fn-M6-2de"/>
                     </view>
                     <connections>
-                        <segue destination="qM2-Bg-vea" kind="presentation" identifier="ShowMedList" modalTransitionStyle="crossDissolve" id="FbE-ly-IR0"/>
+                        <segue destination="aDE-vR-MZN" kind="presentation" identifier="ShowMedList" modalTransitionStyle="flipHorizontal" id="Wex-B6-etu"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gO9-sk-qLt" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="134"/>
-        </scene>
-        <!--Medication List-->
-        <scene sceneID="exO-9D-qUE">
-            <objects>
-                <tableViewController id="osN-2g-c57" customClass="MedTableViewController" customModule="Medi_Ready" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eoG-go-JzI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="sectionIndexBackgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MedicineTableViewCell" rowHeight="90" id="jdc-Ra-4Ci" customClass="MedicineTableViewCell" customModule="Medi_Ready" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jdc-Ra-4Ci" id="6Ne-lT-6YY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medicine name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ie-2J-8yz">
-                                            <rect key="frame" x="16" y="11" width="168" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tab dosage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EvF-gJ-TtG">
-                                            <rect key="frame" x="192" y="11" width="167" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dose" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dxa-27-aXf">
-                                            <rect key="frame" x="16" y="34" width="40" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tabs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AG7-u8-WoK">
-                                            <rect key="frame" x="66" y="34" width="37" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Route" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpW-RM-0h5">
-                                            <rect key="frame" x="116" y="34" width="45" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdf-PR-iZc">
-                                            <rect key="frame" x="166" y="34" width="92" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Indication" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGu-wf-n8I">
-                                            <rect key="frame" x="16" y="63" width="343" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stop date?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bH7-1u-fGA">
-                                            <rect key="frame" x="266" y="34" width="93" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="doseLabel" destination="Dxa-27-aXf" id="4bl-Tb-Aeo"/>
-                                    <outlet property="dxLabel" destination="SGu-wf-n8I" id="uiO-wE-gU5"/>
-                                    <outlet property="frequencyLabel" destination="xdf-PR-iZc" id="qAA-Vy-eXg"/>
-                                    <outlet property="medLabel" destination="5ie-2J-8yz" id="UZP-bT-7cb"/>
-                                    <outlet property="numOfDaysLabel" destination="bH7-1u-fGA" id="gbe-8p-DdN"/>
-                                    <outlet property="routeLabel" destination="EpW-RM-0h5" id="nZO-68-zmL"/>
-                                    <outlet property="tabDosageLabel" destination="EvF-gJ-TtG" id="kDQ-2A-Ard"/>
-                                    <outlet property="tabsLabel" destination="AG7-u8-WoK" id="f4O-N4-add"/>
-                                    <segue destination="sQU-wV-iN8" kind="show" identifier="ShowDetail" id="ilB-Mr-m0f"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="osN-2g-c57" id="YTE-P4-RQO"/>
-                            <outlet property="delegate" destination="osN-2g-c57" id="fhe-0s-dkB"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Medication List" id="3g7-FM-VSj">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="OWd-jk-L8P">
-                            <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="13A-22-p5A" kind="presentation" identifier="AddItem" modalTransitionStyle="crossDissolve" id="xBg-2J-eMG"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VIh-vo-3pz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2047" y="134"/>
-        </scene>
-        <!--Add New Medication-->
-        <scene sceneID="yrh-JW-b18">
-            <objects>
-                <viewController id="sQU-wV-iN8" customClass="MedDetailViewController" customModule="Medi_Ready" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DAY-ab-AjG" customClass="MedDetail" customModule="Medi_Ready" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medication Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijf-tx-ncL">
-                                <rect key="frame" x="16" y="83" width="139" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dose Per Tablet:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ee-ug-L4O">
-                                <rect key="frame" x="16" y="118" width="126" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Prescribed Dosage:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8z-c0-pnm">
-                                <rect key="frame" x="16" y="159" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Tablets:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvM-rD-ueh">
-                                <rect key="frame" x="16" y="194" width="146" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Route:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwl-Wz-wBr">
-                                <rect key="frame" x="105" y="231" width="50" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Frequency:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kjd-Gq-hha">
-                                <rect key="frame" x="69" y="264" width="86" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Days:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmv-fa-pIH">
-                                <rect key="frame" x="27" y="298" width="129" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(i.e. 14 days for antibiotic)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0a-DO-394">
-                                <rect key="frame" x="16" y="329" width="198" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Indication / Diagnosis:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UCd-zg-pNg">
-                                <rect key="frame" x="16" y="363" width="168" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter medication name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RpO-iT-yOz">
-                                <rect key="frame" x="163" y="83" width="196" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter dose per tablet" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-5R-7Ol">
-                                <rect key="frame" x="163" y="118" width="196" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter prescribed dosage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aCj-PX-hQB">
-                                <rect key="frame" x="174" y="159" width="185" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number of tablets" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ale-Ts-3yg">
-                                <rect key="frame" x="170" y="194" width="189" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter route" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="diU-SW-EMb">
-                                <rect key="frame" x="163" y="231" width="196" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter frequency" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HTX-pw-jiN">
-                                <rect key="frame" x="163" y="264" width="196" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter number of days" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mad-v1-3c4">
-                                <rect key="frame" x="163" y="298" width="196" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter indication" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAE-O4-apU">
-                                <rect key="frame" x="192" y="363" width="167" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QCR-Fu-UAX">
-                                <rect key="frame" x="119" y="401" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mV5-TV-g9Y">
-                                <rect key="frame" x="23" y="401" width="88" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rx Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zja-7D-BNM">
-                                <rect key="frame" x="16" y="547" width="96" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XPh-0a-YvK">
-                                <rect key="frame" x="120" y="547" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="9RG-wz-fvA"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Add New Medication" id="8xm-q6-klV">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="iA7-n0-D3W">
-                            <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="xoK-Qw-dj9">
-                            <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="x1f-DE-VJL" kind="unwind" unwindAction="unwindToMedListWithSender:" id="fwu-Ax-XHc"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="dosePerTabletTextField" destination="CdY-5R-7Ol" id="JPf-yp-KC0"/>
-                        <outlet property="dxTextField" destination="ZAE-O4-apU" id="VxD-NT-mp5"/>
-                        <outlet property="frequencyTextField" destination="HTX-pw-jiN" id="nqM-kG-blm"/>
-                        <outlet property="medTextField" destination="RpO-iT-yOz" id="dMX-r8-fLH"/>
-                        <outlet property="numOfDaysTextField" destination="mad-v1-3c4" id="8Tv-gW-dxX"/>
-                        <outlet property="prescribedDoseTextField" destination="aCj-PX-hQB" id="tep-ny-T5Z"/>
-                        <outlet property="routeTextField" destination="diU-SW-EMb" id="S7V-I2-jgP"/>
-                        <outlet property="tabletsTextField" destination="ale-Ts-3yg" id="Tgy-xJ-jua"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EYE-sX-jqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="x1f-DE-VJL" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="3956" y="106"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="oFB-jQ-SXp">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qM2-Bg-vea" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bJO-3I-E1Y">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="osN-2g-c57" kind="relationship" relationship="rootViewController" id="QXU-IM-VBm"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Seb-5a-BFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1070" y="134"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="6yu-oD-buU">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="13A-22-p5A" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="v0t-YJ-CKO">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="sQU-wV-iN8" kind="relationship" relationship="rootViewController" id="Sps-sv-m62"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gOK-uo-r9W" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2986" y="555"/>
+            <point key="canvasLocation" x="-1770" y="134"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ilB-Mr-m0f"/>
+        <segue reference="hfn-jP-kjg"/>
     </inferredMetricsTieBreakers>
 </document>
